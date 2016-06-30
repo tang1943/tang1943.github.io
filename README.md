@@ -7,4 +7,4 @@ My blog made with [jekyll](http://jekyllrb.com) and hosted with Github Pages.
 The theme was forked from [Mica Cowell](https://github.com/getmicah/getmicah.github.io).
 
 ### License
-It is under the [MIT License](https://raw.githubusercontent.com/getmicah/getmicah.github.io/master/LICENSE).
+It is under the [MIT License](https://raw.githubusercontent.com/tang1943/tang1943.github.io/master/LICENSE).
