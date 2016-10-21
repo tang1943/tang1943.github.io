@@ -16,20 +16,26 @@ sass:
 
 
 # Markdown
+highlighter: rouge
 markdown: kramdown
 kramdown:
+  syntax_highlighter: rouge
   input: GFM
-  hard_wrap: false
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    line_numbers: true # bad idea, spans don't need linenos and would inherit this option
+    span:
+      line_numbers: false
+      block:
+        line_numbers: true
+        start_line: 1
  
-#highlight: true
-highlighter: rouge
-
 collections:
   - blog_posts
 
 collections:
   blog_posts:
-    outputs: true
+    output: true
     permalink: /posts/:path/
 
 defaults:
@@ -37,4 +43,5 @@ defaults:
       path: ""
       type: "blog_posts"
     values:
-      layouts: page
+      layout: default
+

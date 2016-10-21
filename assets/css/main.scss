@@ -7,9 +7,10 @@
 body {
     color: $color-fg;
     background: $color-bg;
-    font-family: 'sans-serif', 'Monaco', '文泉驿', 'Microsoft YaHei', '微软雅黑',  'Microsoft JhengHei', '华文细黑', 'STHeiti', 'MingLiu', 'Courier New';
+    font-family: "Lato", "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", "sans-serif";
     font-size: 100%;
     font-weight: 400;
+    line-height: 2;
 }
 h1 {
     margin-bottom: 5px;
@@ -44,10 +45,14 @@ ul {
         }
     }
 }
-
+.head-line {
+    width: 100%;
+    height: 2px;
+    background-color:#000;
+}
 
 .wrapper {
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
     padding: 60px 30px 60px 30px;
     @media screen and (max-width: $br) {
@@ -60,7 +65,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     @media screen and (max-width: $br) {
         display: block;
     }
@@ -78,17 +83,6 @@ ul {
     }
 }
 
-
-.portfolio {
-    padding-bottom: 30px;
-    h1 {
-        font-size: 1.4em;
-        margin-bottom: 5px;
-    }
-}
-
-
-
 .blog {
     padding-bottom: 30px;
     h1 {
@@ -103,7 +97,6 @@ ul {
     &__title {
         font-size: 1.6em;
         font-weight: 700;
-        text-decoration: underline;
         margin-top: 20px;
         margin-bottom: 5px;
     }
@@ -112,7 +105,8 @@ ul {
         font-style: italic;
     }
     &__content {
-        padding-top: 40px;
+        padding-top: 20px;
+	text-align:justify;
         h1 {
             font-size: 1.25em;
             font-weight: 700;
@@ -121,14 +115,12 @@ ul {
         }
         p {
             font-size: 1em;
-            line-height: 150%;
+            line-height: 2;
             margin-bottom: 15px;
+            margin-top: 15px;
         }
         a {
             text-decoration: underline;
-            &:hover {
-                font-weight: bold;
-            }
         }
         strong {
             font-weight: 700;
@@ -159,24 +151,6 @@ ul {
             @media screen and (max-width: $br) {
                 width: 100%;
                 margin: auto;
-            }
-        }
-        code {
-            padding: 3px;
-            font-size: 0.9em;
-            border-radius: 3px;
-            background: $color-grey;
-        }
-        .highlight {
-            margin: 10px;
-            margin-bottom: 15px;
-            padding: 10px;
-            line-height: 1.5;
-            border-radius: 3px;
-            background: $color-fg;
-            code {
-                color: $color-code;
-                background: none;
             }
         }
         .codebreak {

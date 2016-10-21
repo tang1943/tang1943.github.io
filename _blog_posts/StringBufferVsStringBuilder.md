@@ -7,7 +7,7 @@ title: StringBuffer与StringBuilder
 >A mutable sequence of characters.  This class provides an API compatible
 >* with <code>StringBuffer</code>, but with no guarantee of synchronization.
 >This class is designed for use as a drop-in replacement for
-><code>StringBuffer</code> in places where the string buffer was being
+>$StringBuffer$ in places where the string buffer was being
 >used by a single thread (as is generally the case).   Where possible,
 >it is recommended that this class be used in preference to
 ><code>StringBuffer</code> as it will be faster under most implementations.
