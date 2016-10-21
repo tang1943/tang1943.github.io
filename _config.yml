@@ -1,6 +1,6 @@
 # My variables
 name: tang1943
-description: programing, dataming, distribute system
+description: programing, dataming
 google_verification: null
 
 
@@ -24,3 +24,17 @@ kramdown:
 #highlight: true
 highlighter: rouge
 
+collections:
+  - blog_posts
+
+collections:
+  blog_posts:
+    outputs: true
+    permalink: /posts/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "blog_posts"
+    values:
+      layouts: page
