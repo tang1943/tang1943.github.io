@@ -1,5 +1,5 @@
 ---
-title: 正则化范数理解
+title: 对正则化中范数的理解
 date: 2016-10-24
 layout: post
 categories:
