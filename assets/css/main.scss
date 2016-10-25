@@ -183,3 +183,25 @@ ul {
         }
     }
 }
+
+.category {
+    font-size: 18px;
+    padding-top: 30px;
+    .list-item {
+        display: inline-block;
+        margin: 10px;
+	a {
+	    color: #000;
+	}
+	.list-item-count {
+	    color: #bbb;	
+	}
+    }
+    .title {
+    	text-align: center;
+    }
+}
+
+.comments {
+    margin-top: 60px;
+}

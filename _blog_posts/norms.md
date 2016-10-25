@@ -2,6 +2,7 @@
 title: 对正则化中范数的理解
 date: 2016-10-24
 layout: post
+comments: true
 categories:
  - 机器学习
 ---

@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<div class="category">
+        {% assign categories = "" %}
+	{% assign posts = site.blog_posts %}
+	{% for post in posts %}
+	    {% assign ttags = post.categories | join:'|' | append:'|' %}
+	    {% assign categories = categories | append: ttags %}
+	{% endfor %}
+	{% assign categories = categories | split:'|' | sort %}
+        
+	{% assign tags = "" %}
+	{% for tag in categories %}
+	    {% if tag != "" %}
+		{% if tags == "" %}
+		    {% assign tags = tag | split:'|' %}
+		{% endif %}
+		{% unless tags contains tag %}
+		    {% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+		{% endunless %}
+	    {% endif %}
+	{% endfor %}
+        <h1 class="title">目前总共{{ tags.size }}个分类</h1>
+	<ul>
+        {% for tag in tags %}
+	    {% assign post_count = "" %}
+	    {% for post in site.blog_posts %}
+		{% if post.categories contains tag %}
+		    {% assign post_count = post_count | append:'|' %}
+		{% endif %}
+	    {% endfor %}
+	<li class="list-item">
+            <a href="{{ tag | slugify }}">{{ tag }}<span class="list-item-count">({{ post_count.size }})</span></a>
+        </li>
+        {% endfor %}
+	</ul>
+    
+</div>
+
+
