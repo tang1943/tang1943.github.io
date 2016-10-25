@@ -1,4 +1,5 @@
 ---
+title: 编程珠玑 读书笔记
 layout: post
 date: 2015-04-05
 comments: false
