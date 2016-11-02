@@ -2,6 +2,7 @@
 layout: post
 title: 一些材料
 date: 2016-11-02
+comments: true
 categories:
 - 机器学习
 - 其他
