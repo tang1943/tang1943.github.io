@@ -25,20 +25,51 @@ layout: default
 	    {% endif %}
 	{% endfor %}
         <h1 class="title">目前总共{{ tags.size }}个分类</h1>
-	<ul>
-        {% for tag in tags %}
-	    {% assign post_count = "" %}
+	<script type="text/javascript">
+	  var tags = {
+          {% for tag in tags %}
+	    "{{ tag }}": [
 	    {% for post in site.blog_posts %}
-		{% if post.categories contains tag %}
-		    {% assign post_count = post_count | append:'|' %}
+	        {% if post.categories contains tag %}
+		    {'url': '{{ post.url }}', 'title': '{{ post.title }}', 'date': '{{ post.date }}' },
 		{% endif %}
 	    {% endfor %}
-	<li class="list-item">
-            <a href="{{ tag | slugify }}">{{ tag }}<span class="list-item-count">({{ post_count.size }})</span></a>
-        </li>
-        {% endfor %}
-	</ul>
+	    ],	
+          {% endfor %}
+	  }
+	</script>
+	<ul id="all_category"></ul>
     
 </div>
-
+<div class="blog">
+  <ul id="category_detail"></ul>
+</div>
+<script type="text/javascript">
+  function init(){
+    var ul = document.getElementById("all_category");
+    for (var d in tags) {
+       var li = document.createElement("li");
+       li.className = "list-item";
+       var a = document.createElement("a");
+       a.setAttribute('href', 'javascript:void(0);');
+       a.setAttribute('onclick', 'getCategoryByName("' + d + '");return false;');
+       a.innerHTML = d + "<span class='list-item-count'>(" + tags[d].length + ")</span>";
+       li.appendChild(a);
+       ul.appendChild(li);  
+    }             
+  };
+  init();
+  function getCategoryByName(name) {
+    var ul = document.getElementById("category_detail");
+    ul.innerHTML = "";
+    for (d in tags[name]) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+       a.setAttribute('href', tags[name][d]['url']);
+       a.innerHTML = tags[name][d]['title'];
+       li.appendChild(a);
+       ul.appendChild(li);
+    }
+  }
+</script>
 
