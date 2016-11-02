@@ -1,5 +1,5 @@
 ---
-title: 对正则化中范数的理解
+title: 理解SVM优点缺点
 date: 2016-10-24
 layout: post
 comments: true
